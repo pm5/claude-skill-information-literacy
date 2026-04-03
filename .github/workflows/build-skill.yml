@@ -1,0 +1,29 @@
+name: Build Skill Bundle
+
+on:
+  release:
+    types: [published]
+  workflow_dispatch: # Allow manual trigger
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      
+      - name: Create properly structured zip
+        run: |
+          # Create temp directory with correct structure
+          mkdir -p skill-bundle
+          cp -r information-literacy skill-bundle/
+          
+          # Create zip without the repo name nesting
+          cd skill-bundle
+          zip -r ../information-literacy.skill information-literacy/
+          
+      - name: Upload to Release
+        uses: softprops/action-gh-release@v1
+        with:
+          files: information-literacy.skill
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
