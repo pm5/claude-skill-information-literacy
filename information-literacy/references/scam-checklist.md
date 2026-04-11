@@ -1,14 +1,9 @@
 ---
-name: scam-detection
-description: 當使用者貼上一篇文章或短訊息，或是上傳一則截圖，其中有明顯的緊急性要求立即行動時，先使用以下的步驟檢查是否有可疑的詐騙跡象
-allowed-tools:
-  - web_search
-  - web_fetch
+name: scam-checklist
+description: 常見的詐騙可疑信號
 ---
 
-# 網路詐騙偵測
-
-### 第 1 步：急迫性評估 (Urgency Check)
+### 急迫性評估 (Urgency Check)
 
 掃描文本中的時間壓力訊號
 
@@ -21,7 +16,7 @@ allowed-tools:
 
 ---
 
-### 第 2 步：官方管道驗證 (Channel Verification)
+### 官方管道驗證 (Channel Verification)
 
 評估聯絡管道的可信度
 
@@ -32,13 +27,13 @@ allowed-tools:
 
 ---
 
-### 第 3 步：錢財/資料請求評估 (Request Analysis)
+### 錢財/資料請求評估 (Request Analysis)
 
 評估請求的合理性
 
 🔴 絕對紅線（幾乎確定是詐騙）：
 - 要求提供密碼、OTP、簡訊驗證碼
-- 要求轉帳至「安全帳戶」、「監管帳戶」
+- 要轉帳至「安全帳戶」、「監管帳戶」
 - 要求購買點數卡、虛擬貨幣
 - 要求下載遠端控制軟體（TeamViewer、AnyDesk）
 - 要求提供完整信用卡號 + 效期 + 背碼
@@ -56,7 +51,7 @@ allowed-tools:
 
 ---
 
-### 第 4 步：私下聯繫檢查 (Private Contact Check)
+### 私下聯繫檢查 (Private Contact Check)
 
 識別是否要求脫離正式管道
 
